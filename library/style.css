@@ -1,0 +1,20 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-item {
+  width: 25%;
+  min-width: max-content;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-checkbox {
+  width: 25%;
+  min-width: max-content;
+  margin-bottom: 10px;
+  display: flex;
+}

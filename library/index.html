@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library App</title>
+  <link href="style.css" rel="stylesheet" />
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <form>
+    <div role="presentation" class="flex-item">
+      <label for="title-input">Título</label>
+      <input type="text" id="title-input" required />
+    </div>
+
+    <div role="presentation" class="flex-item">
+      <label for="author-input">Autor</label>
+      <input type="text" id="author-input" required />
+    </div>
+
+    <div role="presentation" class="flex-item">
+      <label for="pages-input">Número de páginas</label>
+      <input type="number" id="pages-input" required />
+    </div>
+
+    <div role="presentation" class="flex-checkbox">
+      <label for="read-input">Lido?</label>
+      <input type="checkbox" id="read-input" />
+    </div>
+
+    <button class="flex-item">Enviar</button>
+  </form>
+</body>
+</html>
