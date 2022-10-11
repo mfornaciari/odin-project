@@ -1,17 +1,19 @@
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-table {
-  margin-bottom: 10px;
+  all: unset;
+  padding: 5px 15px;
+  height: 98vh;
+  display: grid;
+  grid-template-columns: max-content auto;
+  gap: 5px;
 }
 
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 15px;
 }
 
 .flex-item {
@@ -27,4 +29,10 @@ form {
   min-width: max-content;
   margin-bottom: 10px;
   display: flex;
+}
+
+table {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 15px;
 }
