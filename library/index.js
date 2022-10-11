@@ -12,13 +12,12 @@ class Book {
   }
 }
 
-function addBookToLibrary(event) {
-  event.preventDefault();
+function addBookToLibrary() {
   const formData = new FormData(form);
   const dataObject = Object.fromEntries(formData);
   const bookInfo = convertToBookInfo(dataObject);
   library.push(new Book(bookInfo));
-  updateTable(library[library.length - 1], list);
+  updateList(library[library.length - 1], list);
 }
 
 function convertToBookInfo(dataObject) {
@@ -29,13 +28,23 @@ function convertToBookInfo(dataObject) {
   };
 }
 
-function updateTable(book, list) {
-  const bookInfo = document.createElement('li');
-  bookInfo.textContent = book.info();
-  list.append(bookInfo);
+function updateList(book, list) {
+  const bookRow = document.createElement('li');
+  bookRow.textContent = book.info();
+  list.append(bookRow);
 }
 
+// Stored books
 const library = [];
-const form = document.getElementById('form');
+
+// HTML Elements
+const newBookButton = document.getElementById('new-book-button');
+const dialog = document.getElementById('dialog');
+const form = dialog.querySelector('form');
 const list = document.getElementById('book-list');
+
+// Event listeners
+newBookButton.addEventListener('click', () => {
+  dialog.showModal();
+});
 form.addEventListener('submit', addBookToLibrary);

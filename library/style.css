@@ -1,54 +1,29 @@
 body {
-  all: unset;
-  padding: 5px 15px;
-  height: 98vh;
-  display: grid;
-  grid-template-columns: max-content auto;
-  gap: 5px;
-}
-
-form {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: x-large;
+}
+
+#new-book-button {
+  align-self: center;
+  font-size: large;
+}
+
+dialog {
+  position: absolute;
   border: 2px solid black;
   border-radius: 10px;
-  padding: 15px;
-}
-
-form label {
-  font-weight: 700;
-}
-
-.flex-item {
-  width: 25%;
-  min-width: max-content;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-}
-
-.flex-checkbox {
-  width: 25%;
-  min-width: max-content;
-  margin-bottom: 10px;
-  display: flex;
+  padding: 10px;
+  background-color: white;
 }
 
 ol {
   list-style-position: inside;
-  margin: 0;
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 15px;
-  flex-direction: column;
-  border-spacing: 0 10px;
-}
-
-ol h1 {
-  margin: 0;
-  text-align: center;
-  font-size: x-large;
 }
 
 ol li {
