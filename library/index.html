@@ -14,32 +14,32 @@
 
     <button id="new-book-button">NEW BOOK</button>
 
-    <dialog id="dialog">
-      <form method="dialog">
-        <div role="presentation" class="flex-item">
+    <dialog id="dialog" aria-label="Form dialog">
+      <form method="dialog" aria-label="New book form">
+        <div role="presentation">
           <label for="title-input">Title</label>
           <input type="text" name="title" id="title-input" required />
         </div>
 
-        <div role="presentation" class="flex-item">
+        <div role="presentation">
           <label for="author-input">Author</label>
           <input type="text" name="author" id="author-input" required />
         </div>
 
-        <div role="presentation" class="flex-item">
+        <div role="presentation">
           <label for="pages-input">Number of pages</label>
           <input type="number" name="pages" id="pages-input" required />
         </div>
 
-        <div role="presentation" class="flex-checkbox">
+        <div role="presentation">
           <label for="read-input">Read?</label>
           <input type="checkbox" name="read" id="read-input" value="yes" />
         </div>
 
-        <button class="flex-item">Send</button>
+        <button>SEND</button>
       </form>
     </dialog>
 
-    <ol id="book-list"></ol>
+    <ol id="book-list" aria-label="Books in library"></ol>
   </body>
 </html>
