@@ -7,8 +7,8 @@ class Book {
   }
 
   info() {
-    const readString = read ? 'already read' : 'not read yet';
-    return `${title} by ${author}, ${pages} pages, ${readString}.`;
+    const readString = this.read ? 'already read' : 'not read yet';
+    return `${this.title} by ${this.author}, ${this.pages} pages, ${readString}.`;
   }
 }
 
@@ -31,13 +31,7 @@ function convertToBookInfo(dataObject) {
 
 function updateTable(book, tableBody) {
   const row = document.createElement('tr');
-
-  for (const value of Object.values(book)) {
-    const cell = document.createElement('td');
-    cell.textContent = value;
-    row.appendChild(cell);
-  }
-
+  row.textContent = book.info();
   tableBody.append(row);
 }
 

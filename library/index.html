@@ -1,50 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Library App</title>
-  <link href="style.css" rel="stylesheet" />
-  <script src="index.js" defer></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library App</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="index.js" defer></script>
+  </head>
 
-<body>
-  <table>
-    <thead>
-      <th>Título</th>
-      <th>Autor</th>
-      <th>Páginas</th>
-      <th>Lido?</th>
-    </thead>
+  <body>
+    <table>
+      <thead>
+        <th>LIVROS</th>
+      </thead>
 
-    <tbody id="table-body">
+      <tbody id="table-body"></tbody>
+    </table>
 
-    </tbody>
-  </table>
+    <form id="form">
+      <div role="presentation" class="flex-item">
+        <label for="title-input">Título</label>
+        <input type="text" name="title" id="title-input" required />
+      </div>
 
-  <form id="form">
-    <div role="presentation" class="flex-item">
-      <label for="title-input">Título</label>
-      <input type="text" name="title" id="title-input" required />
-    </div>
+      <div role="presentation" class="flex-item">
+        <label for="author-input">Autor</label>
+        <input type="text" name="author" id="author-input" required />
+      </div>
 
-    <div role="presentation" class="flex-item">
-      <label for="author-input">Autor</label>
-      <input type="text" name="author" id="author-input" required />
-    </div>
+      <div role="presentation" class="flex-item">
+        <label for="pages-input">Número de páginas</label>
+        <input type="number" name="pages" id="pages-input" required />
+      </div>
 
-    <div role="presentation" class="flex-item">
-      <label for="pages-input">Número de páginas</label>
-      <input type="number" name="pages" id="pages-input" required />
-    </div>
+      <div role="presentation" class="flex-checkbox">
+        <label for="read-input">Lido?</label>
+        <input type="checkbox" name="read" id="read-input" value="yes" />
+      </div>
 
-    <div role="presentation" class="flex-checkbox">
-      <label for="read-input">Lido?</label>
-      <input type="checkbox" name="read" id="read-input" value="yes"/>
-    </div>
-
-    <button class="flex-item">Enviar</button>
-  </form>
-</body>
+      <button class="flex-item">Enviar</button>
+    </form>
+  </body>
 </html>
