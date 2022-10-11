@@ -18,7 +18,7 @@ function addBookToLibrary(event) {
   const dataObject = Object.fromEntries(formData);
   const bookInfo = convertToBookInfo(dataObject);
   library.push(new Book(bookInfo));
-  updateTable(library[library.length - 1], tableBody);
+  updateTable(library[library.length - 1], list);
 }
 
 function convertToBookInfo(dataObject) {
@@ -29,13 +29,13 @@ function convertToBookInfo(dataObject) {
   };
 }
 
-function updateTable(book, tableBody) {
-  const row = document.createElement('tr');
-  row.textContent = book.info();
-  tableBody.append(row);
+function updateTable(book, list) {
+  const bookInfo = document.createElement('li');
+  bookInfo.textContent = book.info();
+  list.append(bookInfo);
 }
 
 const library = [];
 const form = document.getElementById('form');
-const tableBody = document.getElementById('table-body');
+const list = document.getElementById('book-list');
 form.addEventListener('submit', addBookToLibrary);

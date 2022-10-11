@@ -16,6 +16,10 @@ form {
   padding: 15px;
 }
 
+form label {
+  font-weight: 700;
+}
+
 .flex-item {
   width: 25%;
   min-width: max-content;
@@ -31,8 +35,27 @@ form {
   display: flex;
 }
 
-table {
+ol {
+  list-style-position: inside;
+  margin: 0;
   border: 2px solid black;
   border-radius: 10px;
   padding: 15px;
+  flex-direction: column;
+  border-spacing: 0 10px;
+}
+
+ol h1 {
+  margin: 0;
+  text-align: center;
+  font-size: x-large;
+}
+
+ol li {
+  margin: 5px 0;
+  padding: 5px;
+}
+
+ol li:nth-child(odd) {
+  background-color: lightgray;
 }
