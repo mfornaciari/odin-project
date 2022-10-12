@@ -1,9 +1,14 @@
+// IDs of all books ever created
+const bookIds = [];
+
 class Book {
   constructor({ title = '', author = '', pages = 0, read = false }) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
+    this.id = bookIds.length;
+    bookIds.push(this.id);
   }
 
   info() {
@@ -12,12 +17,17 @@ class Book {
   }
 }
 
-function addBookToLibrary() {
+function addToLibrary() {
   const formData = new FormData(form);
+  const book = createBook(formData);
+  library.push(book);
+  addToList(library[library.length - 1]);
+}
+
+function createBook(formData) {
   const dataObject = Object.fromEntries(formData);
   const bookInfo = convertToBookInfo(dataObject);
-  library.push(new Book(bookInfo));
-  updateList(library[library.length - 1], list);
+  return new Book(bookInfo);
 }
 
 function convertToBookInfo(dataObject) {
@@ -28,14 +38,45 @@ function convertToBookInfo(dataObject) {
   };
 }
 
-function updateList(book, list) {
-  const bookRow = document.createElement('li');
-  bookRow.textContent = book.info();
+function addToList(book) {
+  const bookRow = createRow(book);
   list.append(bookRow);
 }
 
+function createRow(book) {
+  const row = document.createElement('li');
+  row.id = book.id;
+  const text = createSpan(book.info());
+  const removeButton = createRemoveButton(book.id);
+  row.append(text);
+  row.append(removeButton);
+  return row;
+}
+
+function createSpan(text) {
+  const span = document.createElement('span');
+  span.textContent = text;
+  return span;
+}
+
+function createRemoveButton(bookId) {
+  const button = document.createElement('button');
+  button.textContent = 'REMOVE';
+  button.addEventListener('click', () => removeFromLibrary(bookId));
+  return button;
+}
+
+function removeFromLibrary(bookId) {
+  library = library.filter(storedBook => storedBook.Id === bookId);
+  removeFromList(bookId);
+}
+
+function removeFromList(bookId) {
+  document.getElementById(bookId).remove();
+}
+
 // Stored books
-const library = [];
+let library = [];
 
 // HTML Elements
 const newBookButton = document.getElementById('new-book-button');
@@ -47,4 +88,4 @@ const list = document.getElementById('book-list');
 newBookButton.addEventListener('click', () => {
   dialog.showModal();
 });
-form.addEventListener('submit', addBookToLibrary);
+form.addEventListener('submit', addToLibrary);
