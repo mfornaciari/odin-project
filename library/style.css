@@ -39,3 +39,7 @@ ol li {
 ol li:nth-child(odd) {
   background-color: lightgray;
 }
+
+ol li span {
+  margin-right: 5px;
+}
