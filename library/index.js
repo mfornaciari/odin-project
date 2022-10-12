@@ -15,6 +15,10 @@ class Book {
     const readString = this.read ? 'already read' : 'not read yet';
     return `${this.title} by ${this.author}, ${this.pages} pages, ${readString}.`;
   }
+
+  changeRead() {
+    this.read = !this.read;
+  }
 }
 
 function addToLibrary() {
@@ -47,8 +51,10 @@ function createRow(book) {
   const row = document.createElement('li');
   row.id = book.id;
   const text = createSpan(book.info());
+  const readButton = createReadButton(book);
   const removeButton = createRemoveButton(book.id);
   row.append(text);
+  row.append(readButton);
   row.append(removeButton);
   return row;
 }
@@ -57,6 +63,19 @@ function createSpan(text) {
   const span = document.createElement('span');
   span.textContent = text;
   return span;
+}
+
+function createReadButton(book) {
+  const button = document.createElement('button');
+  button.textContent = 'READ';
+  button.addEventListener('click', () => updateRow(book));
+  return button;
+}
+
+function updateRow(book) {
+  book.changeRead();
+  const row = document.getElementById(book.id);
+  row.firstChild.textContent = book.info();
 }
 
 function createRemoveButton(bookId) {

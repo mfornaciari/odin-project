@@ -36,10 +36,10 @@ ol li {
   padding: 5px;
 }
 
-ol li:nth-child(odd) {
-  background-color: lightgray;
+ol li * {
+  margin-right: 5px;
 }
 
-ol li span {
-  margin-right: 5px;
+ol li:nth-child(odd) {
+  background-color: lightgray;
 }
